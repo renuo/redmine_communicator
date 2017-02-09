@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Aufgewendete Zeit</title>
+  <link rel="self" href="https://URL/issues/916/time_entries.atom"/>
+  <link rel="alternate" href="https://URL/issues/916/time_entries"/>
+  <id>https://URL/</id>
+  <icon>https://URL/favicon.ico</icon>
+  <updated>2017-01-14T12:34:48Z</updated>
+  <author>
+    <name>Redmine Renuo</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>0.01 Stunde (Feature #916 (To Specify): Auto time entries)</title>
+    <link rel="alternate" href="https://URL/projects/toggle-auto-time-entries/time_entries?issue_id=916"/>
+    <id>https://URL/projects/toggle-auto-time-entries/time_entries?issue_id=916</id>
+    <updated>2017-01-14T12:34:48Z</updated>
+    <author>
+      <name>Roger Tester</name>
+      <email>roger.tester@renuo.ch</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Test für reminder&lt;/p&gt;
+    </content>
+  </entry>
+</feed>
