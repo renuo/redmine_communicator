@@ -38,11 +38,11 @@ defmodule RedmineCommunicator.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:bamboo, "~> 0.7"},
+     {:bamboo, "~> 0.7", override: true},
      {:bamboo_smtp, "~> 1.2.1"},
      {:httpotion, "~> 3.0.2"},
      {:sweet_xml, "~> 0.3.0"},
-     {:bamboo_sparkpost, "~> 0.5.0"}
+     {:bamboo_sparkpost, git: "git@github.com:andrewtimberlake/bamboo_sparkpost.git", branch: "master" }
     ] 
   end
 
