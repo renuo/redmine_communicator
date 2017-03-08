@@ -42,7 +42,7 @@ defmodule RedmineCommunicator.Mixfile do
      {:bamboo_smtp, "~> 1.2.1"},
      {:httpotion, "~> 3.0.2"},
      {:sweet_xml, "~> 0.3.0"},
-     {:bamboo_sparkpost, git: "git@github.com:andrewtimberlake/bamboo_sparkpost.git", branch: "master" }
+     {:bamboo_sparkpost, git: "https://github.com/andrewtimberlake/bamboo_sparkpost.git", branch: "master" }
     ] 
   end
 
