@@ -19,7 +19,7 @@ defmodule RedmineCommunicator.Mixfile do
   def application do
     [mod: {RedmineCommunicator, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :httpotion, :bamboo]]
+                    :phoenix_ecto, :postgrex, :httpotion, :bamboo, :httpoison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,8 +38,9 @@ defmodule RedmineCommunicator.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:bamboo, "~> 0.7", override: true},
-     {:bamboo_smtp, "~> 1.2.1"},
+     {:bamboo, "~> 0.8", override: true},
+     {:bamboo_smtp, "~> 1.4.0"},
+     {:httpoison, "0.13.0"},
      {:httpotion, "~> 3.0.2"},
      {:sweet_xml, "~> 0.3.0"},
      {:bamboo_sparkpost, git: "https://github.com/andrewtimberlake/bamboo_sparkpost.git", branch: "master" }
