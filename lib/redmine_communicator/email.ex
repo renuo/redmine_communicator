@@ -4,7 +4,7 @@ defmodule RedmineCommunicator.Email do
   def send_unhandled_toggl_entry_reminder(email_address, time_entries) do
     new_email()
     |> to("#{email_address}")
-    |> from("'Toggle Reminder' <#{Application.get_env(:redmine_communicator, RedmineCommunicator.Email)[:sender_email]}>")
+    |> from({"Toggle Reminder", Application.get_env(:redmine_communicator, RedmineCommunicator.Email)[:sender_email]})
     |> subject("Please handle your 916 toggle-entries")
     |> Bamboo.SparkPostHelper.disable_open_tracking
     |> Bamboo.SparkPostHelper.disable_click_tracking
