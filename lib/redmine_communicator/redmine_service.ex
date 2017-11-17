@@ -26,12 +26,6 @@ defmodule RedmineCommunicator.RedmineService do
     result
   end
 
-  def filter_title(entry) do
-    entry[:title]
-    |> to_string
-    |> String.replace("/n","")
-  end
-
   def filter_content(entry) do
     entry[:content]
     |> to_string
@@ -39,16 +33,16 @@ defmodule RedmineCommunicator.RedmineService do
   end
 
   def generate_time_entries(entries) do
-    time_entries = Enum.reduce(entries, "", fn(entry, acc) -> "#{acc}* #{filter_title(entry)} #{filter_content(entry)}\n" end)
+    time_entries = Enum.reduce(entries, "", fn(entry, acc) -> "#{acc}* #{entry[:title]} #{filter_content(entry)}\n" end)
     time_entries
     |> to_string
     |> String.replace("<p>", "")
-    |> String.replace("</p>", "") 
+    |> String.replace("</p>", "")
   end
   
   def send_reminder_for(toggl_entries_per_user) do
     for {email, entries} <- toggl_entries_per_user do
-      time_entries = generate_time_entries(entries)          
+      time_entries = generate_time_entries(entries)
       IO.inspect email
       IO.inspect time_entries
       RedmineCommunicator.Email.send_unhandled_toggl_entry_reminder(email, time_entries) |> RedmineCommunicator.Mailer.deliver_now
