@@ -27,7 +27,7 @@ defmodule RedmineCommunicator.RedmineService do
   end
 
   def generate_time_entries(entries) do
-    time_entries = Enum.reduce(entries, "", fn(entry, acc) -> acc <> "* #{entry[:title]} #{entry[:content]}" end)
+    time_entries = Enum.reduce(entries, "", fn(entry, acc) -> "#{acc}* #{entry[:title]} #{entry[:content]}" end)
     time_entries
     |> to_string
     |> String.replace("<p>", "")
