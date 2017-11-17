@@ -26,8 +26,20 @@ defmodule RedmineCommunicator.RedmineService do
     result
   end
 
+  def filter_title(entry) do
+    entry[:title]
+    |> to_string
+    |> String.replace("/n","")
+  end
+
+  def filter_content(entry) do
+    entry[:content]
+    |> to_string
+    |> String.strip
+  end
+
   def generate_time_entries(entries) do
-    time_entries = Enum.reduce(entries, "", fn(entry, acc) -> "#{acc}* #{entry[:title]} #{entry[:content]}" end)
+    time_entries = Enum.reduce(entries, "", fn(entry, acc) -> "#{acc}* #{filter_title(entry)} #{filter_content(entry)}\n" end)
     time_entries
     |> to_string
     |> String.replace("<p>", "")
