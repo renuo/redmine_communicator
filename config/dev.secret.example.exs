@@ -7,3 +7,4 @@ config :redmine_communicator, RedmineCommunicator.RedmineService,
   redmine_atom_key: "See redmine",
   redmine_url: "redmine url",
   dashboard_url: "renuo dashboard url"
+  
