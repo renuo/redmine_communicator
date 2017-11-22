@@ -31,7 +31,9 @@ config :redmine_communicator, RedmineCommunicator.Email,
 
 config :redmine_communicator, RedmineCommunicator.RedmineService,
   redmine_atom_key: System.get_env("REDMINE_ATOM_KEY"),
-  redmine_url: System.get_env("REDMINE_URL")
+  redmine_url: System.get_env("REDMINE_URL"),
+  dashboard_url: System.get_env("DASHBOARD_URL")
+  
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
