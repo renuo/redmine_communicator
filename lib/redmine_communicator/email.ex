@@ -16,6 +16,7 @@ defmodule RedmineCommunicator.Email do
         <> "#{Application.get_env(:redmine_communicator, RedmineCommunicator.RedmineService)[:redmine_url]}/issues/916/time_entries\n" 
         <> "#{time_entries}\n"
         <> "You might find the right ticket here: #{Application.get_env(:redmine_communicator, RedmineCommunicator.RedmineService)[:redmine_url]}/projects/internal/wiki/Renuo_FAQ#Renuo-FAQ\n"
+        <> "Or here #{Application.get_env(:redmine_communicator, RedmineCommunicator.RedmineService)[:dashboard_url]}"
         <> "Thanks in advance!"
       )
   end
