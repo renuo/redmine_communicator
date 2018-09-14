@@ -6,8 +6,8 @@ Currently it sends reminder emails about not processable toggl entries in a spec
 ## Infos about Phoenix: 
 To start your Phoenix app:
 
+  * Copy `config/dev.secret.example.exs into config/dev.secret.exs`
   * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   * Install Node.js dependencies with `npm install`
   * Start Phoenix endpoint with `mix phoenix.server`
 

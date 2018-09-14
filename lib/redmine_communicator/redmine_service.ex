@@ -8,6 +8,10 @@ defmodule RedmineCommunicator.RedmineService do
     response = HTTPotion.get(url, query: %{key: key})
     if  HTTPotion.Response.success?(response) do
       send_reminder_for(toggl_entries_per_user(response))
+    else
+      IO.puts :stderr, "An error occurred while connecting to Redmine."
+      IO.puts :stderr, "Status code returned: #{response.status_code}"
+      IO.puts :stderr, "Response: #{response.body}"
     end
   end
 
