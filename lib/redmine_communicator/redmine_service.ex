@@ -4,7 +4,7 @@ defmodule RedmineCommunicator.RedmineService do
 
   def run_toggl_time_entries_reminder do
     key = Application.get_env(:redmine_communicator, RedmineCommunicator.RedmineService)[:redmine_atom_key]
-    url = "#{Application.get_env(:redmine_communicator, RedmineCommunicator.RedmineService)[:redmine_url]}/issues/916/time_entries.atom"
+    url = "#{Application.get_env(:redmine_communicator, RedmineCommunicator.RedmineService)[:redmine_url]}/projects/toggle-auto-time-entries/time_entries.atom?issue_id=~916"
     response = HTTPotion.get(url, query: %{key: key})
     if  HTTPotion.Response.success?(response) do
       send_reminder_for(toggl_entries_per_user(response))
